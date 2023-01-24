@@ -1,8 +1,7 @@
 const LinkedList = require('./linkedList');
 
-const linkList = new LinkedList();
+const linkList = LinkedList.arrayValues(20, 30, 40);
 
-linkList.addToHead(20);
-linkList.addToHead(30);
+linkList.printEelements(); 
 
-console.log(linkList);
+console.log(linkList.getElementByIndex(0).value);
