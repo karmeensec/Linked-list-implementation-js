@@ -1,6 +1,6 @@
 const LinkedList = require('./linkedList');
 
-describe('#addToHead', ()=> { // testing specific method
+describe('#addToHead', ()=> { // testing specific method addToHead
 
     test('Should add element to head of list', ()=> {
 
@@ -19,7 +19,7 @@ describe('#addToHead', ()=> { // testing specific method
 })
 
 
-describe('#getElementByIndex', () => { 
+describe('#getElementByIndex', () => {  // testing specific method getElementByIndex
 
 
     describe('If we put index less than 0', ()=> {
