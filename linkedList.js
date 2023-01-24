@@ -14,6 +14,25 @@
         this.length++; // increment, new element will be added
     }
 
+    getElementByIndex(indexList) {
+
+        if ( indexList < 0 || indexList >= this.length) return null;  // check for null
+
+        if ( indexList == 0) return this.head; // check for 0
+
+
+        let currentIndex = this.head; // by default
+
+        for (let i = 0 ; i < indexList ; i++) {
+
+            currentIndex = currentIndex.next;
+
+        }
+
+        return currentIndex;
+
+    }
+
 }
 
 module.exports = LinkedList;
@@ -36,7 +55,7 @@ LinkedList.arrayValues = function(...values) {  // create LinkedList from array 
 
     const linkedList = new LinkedList();
     
-    for (let i = values.length - 1; i >= 0 ; i--) {
+    for (let i = values.length - 1; i >= 0; i--) {
 
         linkedList.addToHead(values[i]);
 
