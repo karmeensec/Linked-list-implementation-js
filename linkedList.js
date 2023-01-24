@@ -18,7 +18,7 @@
 
         if ( indexList < 0 || indexList >= this.length) return null;  // check for null
 
-        if ( indexList == 0) return this.head; // check for 0
+        if ( indexList === 0) return this.head; // check for 0
 
 
         let currentIndex = this.head; // by default
@@ -46,6 +46,23 @@
         }
 
         console.log(`${output} null`);
+
+    }
+
+
+    addElementByIndex(indexList, value) {
+
+        if (indexList < 0 || indexList >= this.length) return;
+
+        if (indexList === 0) return this.addToHead(value);
+
+        const previousElement = this.getElementByIndex(indexList - 1); // {10, 20}
+
+        if (previousElement === null) return;  // can't add outside of the range
+
+        previousElement.next = new LinkedListNode(value, previousElement.next)  // <-- current element // {10, 20} --> {10, **30, 20} like Sandwich
+
+        this.length++;
 
     }
 
