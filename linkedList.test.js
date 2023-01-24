@@ -1,5 +1,7 @@
 const LinkedList = require('./linkedList');
 
+// Test driven development
+
 describe('#addToHead', ()=> { // testing specific method addToHead
 
     test('Should add element to head of list', ()=> {
@@ -76,4 +78,78 @@ describe('#getElementByIndex', () => {  // testing specific method getElementByI
 
 
  })
+
+
+
+ describe('#addElementByIndex', ()=> {
+
+    describe('If we put index less than 0', ()=> {
+
+        test('Do not do anything', ()=> {
+
+            const linkList = LinkedList.arrayValues(5, 20);
+
+            // expect(linkList.addElementByIndex(-1)).toBeNull(); // outside of the range
+
+            linkList.addElementByIndex(-1, 25);
+            expect(linkList.length).toBe(2);
+
+        });
+
+    })
+
+
+    describe('If we put index greater than length of the list', () => { 
+
+        test('Do not do anything', ()=> {
+
+            const linkList = LinkedList.arrayValues(5, 20);
+
+            // expect(linkList.addElementByIndex(6)).toBeNull(); // outside of the range
+
+            linkList.addElementByIndex(6, 25);
+            expect(linkList.length).toBe(2);
+
+        });
+
+    })
+
+
+    describe('if we put 0 as an index', ()=> {
+
+        test('Must add it to the head', ()=> {
+
+            const linkList = LinkedList.arrayValues(5, 20);
+
+            linkList.addElementByIndex(0, 25);
+
+            expect(linkList.head.value).toBe(25);
+            expect(linkList.head.next.value).toBe(5);
+            expect(linkList.length).toBe(3);
+
+            // expect(linkList.addElementByIndex(0)).toBe(linkList.head);  // or 5
+
+        });
+
+    })
+
+    describe('if we add index in the middle of the list', ()=> {
+
+        test('Must add it to the head', ()=> {
+
+            const linkList = LinkedList.arrayValues(5, 15, 20, 25);
+
+            linkList.addElementByIndex(3, 30); // add 30 to the 5th position
+
+            const node = linkList.getElementByIndex(3);
+
+            expect(node.value).toBe(30);
+            expect(node.next.value).toBe(25);
+            expect(linkList.length).toBe(5);
+
+        });
+
+    })
+
+ });
 
