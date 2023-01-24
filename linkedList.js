@@ -28,3 +28,20 @@ class LinkedListNode {
     }
 
 }
+
+
+// Helper function
+
+LinkedList.arrayValues = function(...values) {  // create LinkedList from array values
+
+    const linkedList = new LinkedList();
+    
+    for (let i = values.length - 1; i >= 0 ; i--) {
+
+        linkedList.addToHead(values[i]);
+
+    }
+
+    return linkedList;
+
+}
