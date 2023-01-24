@@ -33,6 +33,22 @@
 
     }
 
+    printEelements() {
+
+        let output = ''; // by default
+        let currentIndex = this.head;
+
+        while(currentIndex) {
+
+            output = `${output}  ${currentIndex.value} ===> `;
+            currentIndex = currentIndex.next;
+
+        }
+
+        console.log(`${output} null`);
+
+    }
+
 }
 
 module.exports = LinkedList;
