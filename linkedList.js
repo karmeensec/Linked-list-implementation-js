@@ -1,4 +1,4 @@
- export class linkedList {
+ class LinkedList {
 
     constructor() {
 
@@ -7,9 +7,18 @@
 
     }
 
+    addToHead(data) {
+
+        const newNode = new LinkedListNode(data, this.head); // pass data to the next element -> head 
+        this.head = newNode;
+        this.length++; // increment, new element will be added
+    }
+
 }
 
-export class LinkedListNode {
+module.exports = LinkedList;
+
+class LinkedListNode {
 
     constructor(value, next) {
 
