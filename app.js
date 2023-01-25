@@ -2,7 +2,7 @@ const LinkedList = require('./linkedList');
 
 // .1
 
-const linkList = LinkedList.arrayValues(20, 30, 40);
+const linkList = LinkedList.arrayValues(20, 30, 40, 50, 60);
 
 linkList.printEelements(); 
 
@@ -19,5 +19,11 @@ linkList.printEelements();
 // .4
 
 linkList.removeFromHead();
+
+linkList.printEelements();
+
+// .5
+
+linkList.removeByIndex(3);
 
 linkList.printEelements();
