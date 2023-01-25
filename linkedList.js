@@ -73,6 +73,22 @@
         this.length--;
     }
 
+
+    removeByIndex(indexList) {
+
+        if (indexList < 0 || indexList >= this.length) return;
+
+        if (indexList === 0) return this.removeFromHead();
+
+        const previousElement = this.getElementByIndex(indexList - 1);
+
+        if (previousElement === null) return; 
+
+        previousElement.next = previousElement.next.next; // <-- current element // {10, 20, 30} --> {10, **20, 30} Jump like a frog
+
+        this.length--;
+    }
+
 }
 
 module.exports = LinkedList;
