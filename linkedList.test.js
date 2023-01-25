@@ -172,3 +172,72 @@ describe('#getElementByIndex', () => {  // testing specific method getElementByI
 
   })
 
+
+
+
+  describe('#removeByIndex', () => {
+
+    describe('If we put index less than 0', ()=> {
+
+        test('Do not do anything', ()=> {
+
+            const linkList = LinkedList.arrayValues(5, 20);
+
+            linkList.removeByIndex(-1);
+            expect(linkList.length).toBe(2);
+
+        });
+
+    })
+
+
+    describe('If we put index greater than length of the list', () => { 
+
+        test('Do not do anything', ()=> {
+
+            const linkList = LinkedList.arrayValues(5, 20);
+
+            linkList.removeByIndex(6);
+            expect(linkList.length).toBe(2);
+
+        });
+
+    })
+
+
+    describe('if we put 0 as an index', ()=> {
+
+        test('Must add it to the head', ()=> {
+
+            const linkList = LinkedList.arrayValues(5, 20, 25);
+
+            linkList.removeByIndex(0);
+
+            expect(linkList.head.value).toBe(20);
+            expect(linkList.head.next.value).toBe(25);
+            expect(linkList.length).toBe(2);
+
+        });
+
+    })
+
+    describe('if we add index in the middle of the list', ()=> {
+
+        test('Must add it to the head', ()=> {
+
+            const linkList = LinkedList.arrayValues(5, 15, 20, 25);
+
+            linkList.removeByIndex(2); 
+
+            const node = linkList.getElementByIndex(1);
+
+            expect(node.value).toBe(15);
+            expect(node.next.value).toBe(25);
+            expect(linkList.length).toBe(3);
+
+        });
+
+    })
+
+  })
+
