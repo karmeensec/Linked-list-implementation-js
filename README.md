@@ -13,6 +13,10 @@
 - Removing elements from head
 - Removing elements by specific index
 
+Tests were written by using [Jest Framework](https://jestjs.io/).
+
+Get more information about this JavaScript Testing Framework here - [Jest DOCS ](https://jestjs.io/docs/getting-started)
+
 
 ## Run Locally
 
