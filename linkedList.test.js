@@ -153,3 +153,22 @@ describe('#getElementByIndex', () => {  // testing specific method getElementByI
 
  });
 
+
+
+
+ describe('#removeFromHead', () => { 
+
+    test('Must remove element from the head', ()=> {
+
+        const linkList = LinkedList.arrayValues(5, 15, 20, 25);
+
+        linkList.removeFromHead();
+
+        expect(linkList.head.value).toBe(15);
+        expect(linkList.head.next.value).toBe(20);
+        expect(linkList.length).toBe(3);
+
+    });
+
+  })
+
