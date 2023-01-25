@@ -66,6 +66,13 @@
 
     }
 
+
+    removeFromHead() {
+
+        this.head = this.head.next;
+        this.length--;
+    }
+
 }
 
 module.exports = LinkedList;
